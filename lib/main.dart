@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwidget001/widgets/button.dart';
-import 'package:flutterwidget001/widgets/card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,141 +11,435 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: const Color(0xFF181818),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
+        backgroundColor: const Color(0xFF181818),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Hey, Selena',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Welcome back',
-                            style: TextStyle(
-                              color: Color.fromRGBO(255, 255, 255, 0.8),
-                              fontSize: 10,
-                            ),
-                          ),
-                        )
-                      ],
-                    )
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "../web/icons/daram.webp",
+                        width: 40,
+                      ),
+                    ),
+                    const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 Text(
-                  'Total Balance',
+                  'MONDAY 16',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 16,
                     color: Colors.white.withOpacity(0.8),
                   ),
                 ),
                 const SizedBox(
-                  height: 5,
-                ),
-                const Text(
-                  '\$5 194 482',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Button(
-                      text: 'Transfer',
-                      bgColor: Color(0xFFF1B33B),
-                      textColor: Colors.black,
-                    ),
-                    Button(
-                      text: 'Request',
-                      bgColor: Color(0xFF1F2123),
-                      textColor: Colors.white,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Text(
-                      'Wallets',
+                      'TODAY',
                       style: TextStyle(
+                        fontSize: 40,
                         color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      ' ● ',
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.red.withOpacity(0.6),
                       ),
                     ),
                     Text(
-                      'View All',
+                      ' 17   18   19   20',
                       style: TextStyle(
+                        fontSize: 40,
                         color: Colors.white.withOpacity(0.6),
-                        fontSize: 15,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 30,
                 ),
-                const CurrencyCard(
-                  name: "Euro",
-                  code: 'EUR',
-                  amount: '6 428',
-                  icon: Icons.euro_rounded,
-                  isInverted: false,
-                ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrencyCard(
-                    name: "Bitcoin",
-                    code: 'BTC',
-                    amount: '9 785',
-                    icon: Icons.currency_bitcoin_rounded,
-                    isInverted: true,
+                Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                      color: Colors.amber[300],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Column(
+                          children: [
+                            Text(
+                              "11",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "30",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              "|",
+                              style: TextStyle(
+                                fontSize: 22,
+                              ),
+                            ),
+                            Text(
+                              "12",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "20",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "DESIGN",
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const Text(
+                              "MEETING",
+                              style: TextStyle(
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.8),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "ALEX",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "HELENA",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "NANA",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -40),
-                  child: const CurrencyCard(
-                    name: "Dollar",
-                    code: 'USD',
-                    amount: '428',
-                    icon: Icons.attach_money_outlined,
-                    isInverted: false,
+                const SizedBox(
+                  height: 8,
+                ),
+                Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                      color: Colors.purple[300],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Column(
+                          children: [
+                            Text(
+                              "12",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "35",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              "|",
+                              style: TextStyle(
+                                fontSize: 22,
+                              ),
+                            ),
+                            Text(
+                              "14",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "10",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "DAILY",
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const Text(
+                              "PROJECT",
+                              style: TextStyle(
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.8),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  "ME",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "RICHARD",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "CIRY",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "+4",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 153, 255, 106),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Column(
+                          children: [
+                            Text(
+                              "15",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "00",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              "|",
+                              style: TextStyle(
+                                fontSize: 22,
+                              ),
+                            ),
+                            Text(
+                              "16",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "30",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "WEEKLY",
+                              style: TextStyle(
+                                fontSize: 60,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const Text(
+                              "PLANNING",
+                              style: TextStyle(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.8),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "DEN",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "NANA",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                Text(
+                                  "MARK",
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
